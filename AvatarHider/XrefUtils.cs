@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using AvatarHider;
 using HarmonyLib;
 using MelonLoader;
 using UnhollowerBaseLib.Attributes;
 using UnhollowerRuntimeLib.XrefScans;
 
-namespace VRChatUtilityKit.Utilities
+namespace AvatarHider
 {
     /// <summary>
     /// A set of utilites for Xref scanning.
@@ -27,9 +28,9 @@ namespace VRChatUtilityKit.Utilities
         public static HarmonyMethod PrintMethod => _printMethod;
         private static void Print(MethodInfo __originalMethod)
         {
-            VRChatUtilityKitMod.Instance.LoggerInstance.Msg(__originalMethod.Name);
-            VRChatUtilityKitMod.Instance.LoggerInstance.Msg(__originalMethod.DeclaringType.FullName);
-            VRChatUtilityKitMod.Instance.LoggerInstance.Msg("");
+            AvatarHiderMod.Instance.LoggerInstance.Msg(__originalMethod.Name);
+            AvatarHiderMod.Instance.LoggerInstance.Msg(__originalMethod.DeclaringType.FullName);
+            AvatarHiderMod.Instance.LoggerInstance.Msg("");
         }
 
         /// <summary>
@@ -152,17 +153,17 @@ namespace VRChatUtilityKit.Utilities
         {
             try
             {
-                VRChatUtilityKitMod.Instance.LoggerInstance.Msg(ConsoleColor.Yellow, $"Scanning {method.Name}");
+                AvatarHiderMod.Instance.LoggerInstance.Msg(ConsoleColor.Yellow, $"Scanning {method.Name}");
 
-                VRChatUtilityKitMod.Instance.LoggerInstance.Msg(ConsoleColor.Yellow, $"Checking UsedBy");
+                AvatarHiderMod.Instance.LoggerInstance.Msg(ConsoleColor.Yellow, $"Checking UsedBy");
                 DumpScan(XrefScanner.UsedBy(method));
 
-                VRChatUtilityKitMod.Instance.LoggerInstance.Msg(ConsoleColor.Green, "Checking Using");
+                AvatarHiderMod.Instance.LoggerInstance.Msg(ConsoleColor.Green, "Checking Using");
                 DumpScan(XrefScanner.XrefScan(method));
             }
             catch (Exception ex)
             {
-                VRChatUtilityKitMod.Instance.LoggerInstance.Error($"Failed while dumping {method.Name}:\n{ex}");
+                AvatarHiderMod.Instance.LoggerInstance.Error($"Failed while dumping {method.Name}:\n{ex}");
             }
         }
 
@@ -172,9 +173,9 @@ namespace VRChatUtilityKit.Utilities
             {
                 if (instance.Type == XrefType.Global)
                 {
-                    VRChatUtilityKitMod.Instance.LoggerInstance.Msg(instance.Type);
-                    VRChatUtilityKitMod.Instance.LoggerInstance.Msg(instance.ReadAsObject().ToString());
-                    VRChatUtilityKitMod.Instance.LoggerInstance.Msg("");
+                    AvatarHiderMod.Instance.LoggerInstance.Msg(instance.Type);
+                    AvatarHiderMod.Instance.LoggerInstance.Msg(instance.ReadAsObject().ToString());
+                    AvatarHiderMod.Instance.LoggerInstance.Msg("");
                     continue;
                 }
 
@@ -183,16 +184,16 @@ namespace VRChatUtilityKit.Utilities
                 {
                     if (resolvedMethod == null)
                     {
-                        VRChatUtilityKitMod.Instance.LoggerInstance.Msg("null");
-                        VRChatUtilityKitMod.Instance.LoggerInstance.Msg("null");
+                        AvatarHiderMod.Instance.LoggerInstance.Msg("null");
+                        AvatarHiderMod.Instance.LoggerInstance.Msg("null");
                     }
                     else
                     {
-                        VRChatUtilityKitMod.Instance.LoggerInstance.Msg(resolvedMethod.Name);
-                        VRChatUtilityKitMod.Instance.LoggerInstance.Msg(resolvedMethod.DeclaringType.FullName);
+                        AvatarHiderMod.Instance.LoggerInstance.Msg(resolvedMethod.Name);
+                        AvatarHiderMod.Instance.LoggerInstance.Msg(resolvedMethod.DeclaringType.FullName);
                     }
 
-                    VRChatUtilityKitMod.Instance.LoggerInstance.Msg("");
+                    AvatarHiderMod.Instance.LoggerInstance.Msg("");
                 }
             }
         }

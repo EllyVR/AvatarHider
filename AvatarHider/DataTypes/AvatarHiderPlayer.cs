@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using VRC;
 using VRC.SDKBase;
-using VRChatUtilityKit.Utilities;
 
 namespace AvatarHider.DataTypes
 {
@@ -228,9 +228,15 @@ namespace AvatarHider.DataTypes
             }
             else if (wasLimitOnBefore)
             {
-                VRCUtils.ReloadAllAvatars();       
+                ReloadAllAvatars();       
             }
             RefreshManager.Refresh();
         }
+        public static void ReloadAllAvatars()
+        {
+            _reloadAllAvatarsMethod.Invoke(VRCPlayer.field_Internal_Static_VRCPlayer_0, new object[] { false });
+        }
+        public static MethodInfo _reloadAllAvatarsMethod;
+        
     }
 }

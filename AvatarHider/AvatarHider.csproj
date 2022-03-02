@@ -15,11 +15,17 @@
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>$(VRChatPath)MelonLoader\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
+        <Reference Include="VRC.UI.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.UI.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="VRC.UI.Elements, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRC.UI.Elements.dll</HintPath>
+        </Reference>
         <Reference Include="VRCCore-Standalone">
             <HintPath>$(VRChatPath)MelonLoader\Managed\VRCCore-Standalone.dll</HintPath>
         </Reference>
-        <Reference Include="VRChatUtilityKit">
-            <HintPath>$(VRChatPath)Mods\VRChatUtilityKit.dll</HintPath>
+        <Reference Include="VRCCore-Standalone, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\VRCCore-Standalone.dll</HintPath>
         </Reference>
         <Reference Include="VRCSDKBase">
             <HintPath>$(VRChatPath)MelonLoader\Managed\VRCSDKBase.dll</HintPath>

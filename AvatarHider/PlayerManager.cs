@@ -4,7 +4,7 @@ using AvatarHider.DataTypes;
 using UnityEngine;
 using VRC;
 using VRC.Core;
-using VRChatUtilityKit.Utilities;
+using VRC.Management;
 
 namespace AvatarHider
 {
@@ -61,8 +61,8 @@ namespace AvatarHider
                 player = player,
                 avatar = player.prop_VRCPlayer_0.prop_VRCAvatarManager_0.prop_GameObject_0,
                 isFriend = APIUser.IsFriendsWith(player.prop_APIUser_0.id),
-                isShown = VRCUtils.IsAvatarExplcitlyShown(player.prop_APIUser_0),
-                isHidden = VRCUtils.IsAvatarExplcitlyHidden(player.prop_APIUser_0)
+                isShown = IsAvatarExplcitlyShown(player.prop_APIUser_0),
+                isHidden = IsAvatarExplcitlyHidden(player.prop_APIUser_0)
             };
 
             players.Add(playerProp.photonId, playerProp);
@@ -205,6 +205,25 @@ namespace AvatarHider
             }
 
             avatarHiderPlayer = null;
+            return false;
+        }
+        
+        public static bool IsAvatarExplcitlyShown(APIUser user)
+        {
+            if (ModerationManager.prop_ModerationManager_0.field_Private_Dictionary_2_String_List_1_ApiPlayerModeration_0.ContainsKey(user.id))
+                foreach (ApiPlayerModeration moderation in ModerationManager.prop_ModerationManager_0.field_Private_Dictionary_2_String_List_1_ApiPlayerModeration_0[user.id])
+                    if (moderation.moderationType == ApiPlayerModeration.ModerationType.ShowAvatar)
+                        return true;
+
+            return false;
+        }
+        public static bool IsAvatarExplcitlyHidden(APIUser user)
+        {
+            if (ModerationManager.prop_ModerationManager_0.field_Private_Dictionary_2_String_List_1_ApiPlayerModeration_0.ContainsKey(user.id))
+                foreach (ApiPlayerModeration moderation in ModerationManager.prop_ModerationManager_0.field_Private_Dictionary_2_String_List_1_ApiPlayerModeration_0[user.id])
+                    if (moderation.moderationType == ApiPlayerModeration.ModerationType.HideAvatar)
+                        return true;
+
             return false;
         }
     }
