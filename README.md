@@ -31,43 +31,8 @@ The only real way to get punished is to piss of the aforementioned checks, or be
 
 More detailed instructions and more mods can be found in the [VRChat Modding Group Discord](https://discord.gg/rCqKSvR).
 
-## Table of contents<!-- omit in toc -->
-
-- [AskToPortal](#asktoportal)
-- [AvatarHider](#avatarhider)
-- [ChairExitController](#chairexitcontroller)
-- [CloningBeGone](#cloningbegone)
-- [PreviewScroller](#previewscroller)
-- [PrivateInstanceIcon](#privateinstanceicon)
-- [ReloadAvatars](#reloadavatars)
-- [RememberMe](#rememberme)
-- [TriggerESP](#triggeresp)
-- [UserHistory](#userhistory)
-- [UserInfoExtensions](#userinfoextensions)
-- [VRChatUtilityKit](#vrchatutilitykit)
-  - [For Developers](#for-developers)
-  - [Licensing](#licensing)
-- [Credits](#credits)
-
-## AskToPortal
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-
-Makes sure you want to enter a portal, every time you enter a portal.
-
-This mod also contains many checks for portal droppers, or people who use a mod that drops portals maliciously.
-If the mod detects a portal dropper, it will give you the option of blacklisting the user until you restart your game.
-
-You can also toggle the mod on and off and auto accept portals from friends, yourself, and one's placed in the world itself (by the creator).
-
-![Basic User Prompt](https://i.imgur.com/IiOnkCM.png)
-![Detailed User Prompt](https://i.imgur.com/N4QHlbb.png)
-![Basic User Prompt with Errors](https://i.imgur.com/fja7qNY.png)
-![Detailed User Prompt with Errors](https://i.imgur.com/SJPALdl.png)
-
 ## AvatarHider
 
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
 
 Automatically hides avatars based on the distance away from you.
 There's no real reason to render avatars that you don't even pay attention to, right?
@@ -83,131 +48,10 @@ If a friend is using an unoptimized avatar and you would like AvatarHider to hid
 Then show your friends avatars that you would like to be ignored by AvatarHider.
 And set the friend with the unoptimized avatar to the "Use Safety Settings" in the QuickMenu.
 
-## ChairExitController
-
-Prevents you from falling out of chairs accidentally.
-Press both triggers in VR, or q and e in desktop to leave chairs.
-
-## CloningBeGone
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-
-Turns off cloning when you join an instance.
-
-You can configure whether you want cloning to be on or off based off instance type.
-So for example, you can have cloning on in Invite+ worlds and off in all the other instance types.
-
-You can also disable/enable cloning for a specific avatar. The buttons to control these can be toggled on and off.
-Keep in mind however, that this requires the use of UIX and will overwrite the instance type cloning.
-
-## PreviewScroller
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-
-Let's you sort of scroll the avatar preview so you can control where it's facing.
-
-![GIF of the Scrolling in Action](https://i.imgur.com/D2JVwnD.mp4)
-
-## PrivateInstanceIcon
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-
-Adds an icon to the social menu that shows if you can join a person or not.
-
-Let's you configure what the mod does when a user is in a certain world type.
-There are 3 things the mods does:
-
-- Hides the user from the list
-- Shows an icon indicating what world type they're in
-- Acts like default VRChat
-
-Each of these behaviors can be applied to users in:
-
-- Private worlds (or non-joinable mode)
-- Private worlds that you can join (Join me but in private)
-- Friends only worlds
-- Friends plus worlds
-- Public worlds
-
-You can also configure the mod to not affect the favorite users lists.
-
-![Picture of me with the icon on it](https://i.imgur.com/T0Z0uba.png)
-
-## ReloadAvatars
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-[![Requires UIExpansionKit][UIXRequiredBadge]][UIXLink]
-
-Adds buttons to reload a single user's avatar or all users' avatar.
-
-The buttons can each be toggled on and off using UIX
-
-## RememberMe
-
-Adds a "Remember Me" check-box to the Login screen.
-When "Remember Me" is checked off it will auto-fill the last saved VRChat Credentials.
-
-## TriggerESP
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-[![Requires UIExpansionKit][UIXRequiredBadge]][UIXLink]
-
-Will highlight all VRChat interactables as well as any Unity UI buttons.
-
-The color the ESP is customizable, and you can also set the color as random.
-The strength of the ESP is customizable as well.
-
-Note that it disables itself in worlds that don't allow risky functions.
-
-![Picture of Outline](https://i.imgur.com/QnawlKb.jpg)
-![Picture of Wireframe](https://i.imgur.com/nnTN4na.jpg)
-
-## UserHistory
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-[![Optionally uses UIExpansionKit][UIXOptionalBadge]][UIXLink]
-
-Shows you when an user joined, and when clicking on them, opens when in the user page.
-It's basically a copy + paste of [InstanceHistory](https://github.com/Nirv-git/VRC-Mods).
-
-It is highly recommended to use UIX because it's just easier, although there are preferences to change the position of the regular button if you don't like UIX.
-
-## UserInfoExtensions
-
-[![Requires VRChatUtilityKit][VRCUKRequiredBadge]][VRCUKLink]
-[![Requires UIExpansionKit][UIXRequiredBadge]][UIXLink]
-
-Adds buttons to the to make VRChat more convenient.
-
-Adding individually toggleable buttons that allow you to:
-
-- Select a user in the Quick Menu from the Social Menu page.
-- Find the avatar's author from the Social Menu and Avatar Menu pages.
-- Open the links the selected user has in their bio.
-- Display the languages the selected user has in their bio.
-
-The buttons can always be accessed in a popup attached to the User Details Page.
-
-Additionally, in the popup you can see the user's:
-
-- username (what the person logs in with)
-- platform (Quest or PC)
-- last login (literal login, not starting the game)
-- date joined (date original unmerged account created)
-- friend number (the number friend they are. like 1st friend, 2nd friend, etc.)
-
-For avatars, you can see their:
-
-- author's name
-- name
-- supported platforms
-- release type
-- time which they were last updated
-- version
 
 ## VRChatUtilityKit
 
-Various sets of utilities for developers to use in their mods.
+Migrated methods from VRChatUtilityKit to this mod. 
 
 ### For Developers
 
