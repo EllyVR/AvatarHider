@@ -6,8 +6,7 @@ using MelonLoader;
 using VRC;
 using VRC.UI.Core;
 
-//Refrencing that its not the official one. 
-[assembly: MelonInfo(typeof(AvatarHider.AvatarHiderMod), "AvatarHider (Modified)", "1.3.2", "Sleepers (Modded By Elly)", "https://github.com/SleepyVRC/Mods")]
+[assembly: MelonInfo(typeof(AvatarHider.AvatarHiderMod), "AvatarHider", "1.4.0", "loukylor, Sleepers, Elly", "https://github.com/EllyVR/AvatarHider")]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonOptionalDependencies("UIExpansionKit")]
 

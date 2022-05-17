@@ -35,6 +35,7 @@ namespace AvatarHider
 
             if (!players.ContainsKey(photonId)) return;
 
+           
             players[photonId].SetAvatar(gameObject);
             if (filteredPlayers.ContainsKey(photonId))
                 RefreshManager.RefreshPlayer(players[photonId], Player.prop_Player_0.transform.position);
